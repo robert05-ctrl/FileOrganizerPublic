@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fileorganizer-dev-9f264-authRole",
+      "UnauthRoleArn": "arn:aws:iam::970547371876:role/amplify-fileorganizer-dev-9f264-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::970547371876:role/amplify-fileorganizer-dev-9f264-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-fileorganizer-dev-9f264-deployment",
+      "UnauthRoleName": "amplify-fileorganizer-dev-9f264-unauthRole",
+      "StackName": "amplify-fileorganizer-dev-9f264",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:970547371876:stack/amplify-fileorganizer-dev-9f264/618c5f70-ffce-11ef-b3b9-0a41bbec60ed",
+      "AmplifyAppId": "d32dooq3tnmx9r"
+    }
+  }
+}
