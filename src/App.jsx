@@ -12,6 +12,9 @@ import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import { generateClient } from "aws-amplify/data";
 import outputs from "../amplify_outputs.json";
+import PaymentComponent from "./components/PaymentComponent"
+import * as PortOne from "@portone/browser-sdk/v2"
+import { aws_synthetics } from "aws-cdk-lib";
 /**
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
  */
@@ -33,6 +36,7 @@ export default function App() {
     const { data: profiles } = await client.models.UserProfile.list();
     setUserProfiles(profiles);
   }
+
 
   return (
     <Flex
@@ -72,6 +76,8 @@ export default function App() {
           </Flex>
         ))}
       </Grid>
+      <Button> Subscribe</Button>
+      <PaymentComponent></PaymentComponent>
       <Button onClick={signOut}>Sign Out</Button>
     </Flex>
   );
