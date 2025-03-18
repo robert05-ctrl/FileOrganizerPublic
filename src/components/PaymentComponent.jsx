@@ -30,6 +30,9 @@ function PaymentComponent() {
       const orderId = "order123";
       
       // Call your backend to verify/complete the payment.
+      // If you are not using a full redirect flow, call your backend to complete the payment.
+      // (For redirect mode, the user will be sent back to your redirectUrl with query parameters.)
+
       const backendResponse = await fetch(`https://2lnui99nkh.execute-api.ap-southeast-2.amazonaws.com/dev/paymentComplete`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
