@@ -14,7 +14,7 @@ function PaymentComponent() {
         channelKey: "channel-key-5ac615e1-e0b4-412b-b57e-1bbe47d09210",       // Replace with your actual channel key.
         paymentId: paymentId,
         orderName: "Test Order - Product XYZ",
-        totalAmount: 10,                    // Payment amount in minor units (KRW: multiply by 1, USD: multiply by 100, etc.).
+        totalAmount: 1000,                    // Payment amount in minor units (KRW: multiply by 1, USD: multiply by 100, etc.).
         currency: "CURRENCY_KRW",             // Currency code (check PortOne docs for supported values).
         payMethod: "EASY_PAY",
         redirectUrl: `${window.location.origin}/payment-redirect`  // Redirect URL for mobile redirect flow.
