@@ -1,10 +1,9 @@
-// src/PaymentComponent.js
 import React from 'react';
 import * as PortOne from '@portone/browser-sdk/v2';
 
 function PaymentComponent() {
   const handlePayment = async () => {
-    // Create a unique payment ID (using crypto.randomUUID if available)
+    // Create a unique payment ID using crypto.randomUUID
     const paymentId = `payment-${crypto.randomUUID()}`;
     
     try {
@@ -14,8 +13,8 @@ function PaymentComponent() {
         channelKey: "channel-key-5ac615e1-e0b4-412b-b57e-1bbe47d09210",       // Replace with your actual channel key.
         paymentId: paymentId,
         orderName: "Test Order - Product XYZ",
-        totalAmount: 1000,                    // Payment amount in minor units (KRW: multiply by 1, USD: multiply by 100, etc.).
-        currency: "CURRENCY_KRW",             // Currency code (check PortOne docs for supported values).
+        totalAmount: 1000,                    // Payment amount in minor units (e.g., KRW 1000).
+        currency: "KRW",                      // Currency code
         payMethod: "EASY_PAY",
         redirectUrl: `${window.location.origin}/payment-redirect`  // Redirect URL for mobile redirect flow.
       });
@@ -26,17 +25,20 @@ function PaymentComponent() {
         return;
       }
       
+      // In a full integration your backend should create and store an order.
+      // For demonstration, we'll use a fixed orderId (replace with your actual order id).
+      const orderId = "order123";
+      
+      // Call your backend to verify/complete the payment.
       // If you are not using a full redirect flow, call your backend to complete the payment.
       // (For redirect mode, the user will be sent back to your redirectUrl with query parameters.)
+
       const backendResponse = await fetch(`https://2lnui99nkh.execute-api.ap-southeast-2.amazonaws.com/dev/paymentComplete`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           paymentId: paymentId,
-          order: {
-            amount: 1000,
-            orderName: "Test Order - Product XYZ"
-          }
+          orderId: orderId
         })
       });
       
