@@ -1,50 +1,58 @@
-import React from 'react';
-import * as PortOne from '@portone/browser-sdk/v2';
+import React, { useState } from "react";
+import * as PortOne from "@portone/browser-sdk/v2";
 
 function PaymentComponent() {
+  const [downloadUrl, setDownloadUrl] = useState("");
+
+  // Generate a unique orderId
+  const orderId = `order-${crypto.randomUUID()}`;
+
   const handlePayment = async () => {
-    // Create a unique payment ID using crypto.randomUUID
-    const paymentId = `payment-${crypto.randomUUID()}`;
-    
     try {
-      // Request a payment using PortOne's SDK.
-      const response = await PortOne.requestPayment({
-        storeId: "store-1b6d7be7-c2cf-4e99-bf2f-a1ea45bb3173",           // Replace with your actual store ID.
-        channelKey: "channel-key-5ac615e1-e0b4-412b-b57e-1bbe47d09210",       // Replace with your actual channel key.
-        paymentId: paymentId,
-        orderName: "Test Order - Product XYZ",
-        totalAmount: 1000,                    // Payment amount in minor units (e.g., KRW 1000).
-        currency: "KRW",                      // Currency code
-        payMethod: "EASY_PAY",
-        redirectUrl: `${window.location.origin}/payment-redirect`  // Redirect URL for mobile redirect flow.
+      // Step 1: Create an order record in the backend
+      const createOrderResponse = await fetch("https://2lnui99nkh.execute-api.ap-southeast-2.amazonaws.com/dev/createOrder", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orderId,
+          amount: 1000,           // Set the order amount (must match what PortOne expects)
+          orderName: "Test Order - Product XYZ",
+        }),
       });
-      
-      // Check if an error was returned.
-      if (response.code !== undefined) {
-        alert(`Payment Error: ${response.message}`);
+      const createOrderResult = await createOrderResponse.json();
+      if (!createOrderResult.success) {
+        alert("Order creation failed: " + createOrderResult.error);
         return;
       }
       
-      // In a full integration your backend should create and store an order.
-      // For demonstration, we'll use a fixed orderId (replace with your actual order id).
-      const orderId = "order123";
-      
-      // Call your backend to verify/complete the payment.
-      // If you are not using a full redirect flow, call your backend to complete the payment.
-      // (For redirect mode, the user will be sent back to your redirectUrl with query parameters.)
-
-      const backendResponse = await fetch(`https://2lnui99nkh.execute-api.ap-southeast-2.amazonaws.com/dev/paymentComplete`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          paymentId: paymentId,
-          orderId: orderId
-        })
+      // Step 2: Initiate the payment via PortOne's SDK
+      const paymentId = `payment-${crypto.randomUUID()}`;
+      const portOneResponse = await PortOne.requestPayment({
+        storeId: "store-1b6d7be7-c2cf-4e99-bf2f-a1ea45bb3173",         // Replace with your actual store ID
+        channelKey: "channel-key-5ac615e1-e0b4-412b-b57e-1bbe47d09210",     // Replace with your actual channel key
+        paymentId,
+        orderName: "Test Order - Product XYZ",
+        totalAmount: 1000,                  // Payment amount in minor units
+        currency: "KRW",                    // Currency code
+        payMethod: "EASY_PAY",
+        redirectUrl: `${window.location.origin}/payment-redirect`
       });
       
+      if (portOneResponse.code !== undefined) {
+        alert(`Payment Error: ${portOneResponse.message}`);
+        return;
+      }
+      
+      // Step 3: Send paymentId and orderId to your payment verification backend
+      const backendResponse = await fetch("https://2lnui99nkh.execute-api.ap-southeast-2.amazonaws.com/dev/paymentComplete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ paymentId, orderId }),
+      });
       const result = await backendResponse.json();
-      if (result.success) {
-        alert("Payment completed successfully!");
+      if (result.success && result.downloadUrl) {
+        // Option A: Automatically trigger the download:
+        window.location.href = result.downloadUrl;
       } else {
         alert("Payment verification failed: " + result.error);
       }
@@ -57,8 +65,17 @@ function PaymentComponent() {
   return (
     <div>
       <button onClick={handlePayment}>Pay Now</button>
+      {downloadUrl && (
+        <div>
+          <a href={downloadUrl} download>
+            Click here to download the exe file
+          </a>
+        </div>
+      )}
     </div>
   );
 }
 
 export default PaymentComponent;
+
+

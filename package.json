@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^6.9.3",
+    "@aws-sdk/client-s3": "^3.758.0",
+    "@aws-sdk/s3-request-presigner": "^3.758.0",
     "@portone/browser-sdk": "^0.0.13",
     "aws-amplify": "^6.13.4",
     "axios": "^1.8.2",
