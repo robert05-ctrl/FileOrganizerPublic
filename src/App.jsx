@@ -77,7 +77,7 @@ export default function App() {
         ))}
       </Grid>
       <Button> Subscribe</Button>
-      <PaymentComponent></PaymentComponent>
+      <PaymentComponent />
       <Button onClick={signOut}>Sign Out</Button>
     </Flex>
   );
