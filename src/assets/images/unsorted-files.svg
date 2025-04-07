@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Unsorted Files</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F5F5F5" x="0" y="0" width="800" height="600"></rect>
+        <!-- Scattered files in random positions and rotations -->
+        <!-- File 1 -->
+        <g transform="translate(100, 100) rotate(15)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 2 -->
+        <g transform="translate(250, 150) rotate(-10)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 3 -->
+        <g transform="translate(400, 80) rotate(5)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 4 -->
+        <g transform="translate(550, 180) rotate(-20)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 5 -->
+        <g transform="translate(150, 300) rotate(25)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 6 -->
+        <g transform="translate(350, 350) rotate(-15)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+        <!-- File 7 -->
+        <g transform="translate(500, 400) rotate(10)">
+            <rect fill="#FFFFFF" stroke="#CCCCCC" stroke-width="2" x="0" y="0" width="120" height="150" rx="5"></rect>
+            <rect fill="#EEEEEE" x="15" y="30" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="50" width="90" height="10" rx="2"></rect>
+            <rect fill="#EEEEEE" x="15" y="70" width="60" height="10" rx="2"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Sorted Folders</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F5F5F5" x="0" y="0" width="800" height="600"></rect>
+        <!-- Neatly organized folders in a shelf -->
+        <!-- Shelf -->
+        <rect fill="#E0E0E0" x="100" y="100" width="600" height="400" rx="5"></rect>
+        <rect fill="#D0D0D0" x="100" y="200" width="600" height="5"></rect>
+        <rect fill="#D0D0D0" x="100" y="300" width="600" height="5"></rect>
+        <rect fill="#D0D0D0" x="100" y="400" width="600" height="5"></rect>
+        
+        <!-- Row 1 Folders -->
+        <!-- Folder 1 -->
+        <g transform="translate(130, 120)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#4285F4" stroke="#2A75F3" stroke-width="2"></path>
+            <rect fill="#2A75F3" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">문서</text>
+        </g>
+        
+        <!-- Folder 2 -->
+        <g transform="translate(290, 120)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#0F9D58" stroke="#0B8043" stroke-width="2"></path>
+            <rect fill="#0B8043" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">이미지</text>
+        </g>
+        
+        <!-- Folder 3 -->
+        <g transform="translate(450, 120)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#F4B400" stroke="#E09C00" stroke-width="2"></path>
+            <rect fill="#E09C00" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">음악</text>
+        </g>
+        
+        <!-- Row 2 Folders -->
+        <!-- Folder 4 -->
+        <g transform="translate(130, 220)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#DB4437" stroke="#C53929" stroke-width="2"></path>
+            <rect fill="#C53929" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">비디오</text>
+        </g>
+        
+        <!-- Folder 5 -->
+        <g transform="translate(290, 220)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#9C27B0" stroke="#7B1FA2" stroke-width="2"></path>
+            <rect fill="#7B1FA2" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">다운로드</text>
+        </g>
+        
+        <!-- Folder 6 -->
+        <g transform="translate(450, 220)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#00ACC1" stroke="#0097A7" stroke-width="2"></path>
+            <rect fill="#0097A7" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">프로젝트</text>
+        </g>
+        
+        <!-- Row 3 Folders -->
+        <!-- Folder 7 -->
+        <g transform="translate(130, 320)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#FF6D00" stroke="#E65100" stroke-width="2"></path>
+            <rect fill="#E65100" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">백업</text>
+        </g>
+        
+        <!-- Folder 8 -->
+        <g transform="translate(290, 320)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#3F51B5" stroke="#303F9F" stroke-width="2"></path>
+            <rect fill="#303F9F" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">중요</text>
+        </g>
+        
+        <!-- Folder 9 -->
+        <g transform="translate(450, 320)">
+            <path d="M0,0 L30,0 L40,10 L140,10 L140,80 L0,80 Z" fill="#607D8B" stroke="#455A64" stroke-width="2"></path>
+            <rect fill="#455A64" x="0" y="10" width="140" height="70" rx="2"></rect>
+            <text font-family="Arial" font-size="12" fill="#FFFFFF" x="50" y="45">보관</text>
+        </g>
+    </g>
+</svg>
